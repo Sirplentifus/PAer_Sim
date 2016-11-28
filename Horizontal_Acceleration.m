@@ -1,6 +1,5 @@
 function [ a_H ] = Horizontal_Acceleration( V, h, Pars )
-%UNTITLED Summary of this function goes here
-%   Detailed explanation goes here
+%Horizontal_Acceleration - Compute horizontal acceleration
 
 F_H = EngineThrust( V, Pars ) - Hydrofoil_Drag( V, h, Pars ) ...
     - Hull_Resistance( V, h, Pars ) - Wing_Drag( V, Pars );

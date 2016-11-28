@@ -1,6 +1,19 @@
 function [ hs, R_H, D_h, D_w, D, B_H, L_h, L_w, L, a ] = GetCurves( vs, Pars )
-%UNTITLED Summary of this function goes here
-%   Detailed explanation goes here
+%GetCurves - Obtain the evolution of the forces
+%   Input:
+%   vs - velocities in which to calculate the forces
+%   Pars - relevant parametres (all of them)
+%   Output:
+%   hs - depth of submergence (measured from the bottom of the hydrofoil)
+%   R_H - hull resistance
+%   D_h - hydrofoil drag
+%   D_w - wing drag
+%   D - total drag
+%   B_H - hull buoyancy
+%   L_h - hydrofoil lift
+%   L_w - wing lift
+%   L - total lift
+%   a - total horizontal acceleration
 
 h = (Pars.H_h+Pars.H_V+Pars.H_P); %To serve as first guess
 hs = zeros(size(vs));

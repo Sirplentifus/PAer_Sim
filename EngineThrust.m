@@ -1,6 +1,11 @@
 function [ T ] = EngineThrust( V, Pars )
-%UNTITLED2 Summary of this function goes here
-%   Detailed explanation goes here
+%EngineThrust - Computes the engine thrust as a function of velocity and
+%other parameters
+%   Input:
+%   V - Aircraft speed. Unused for now
+%   Pars - Relevant parametres. None used for now.
+%   Output:
+%   T - Total Engine thrust (for all engines combined)
 
 T = 80e3;
 

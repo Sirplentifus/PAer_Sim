@@ -1,1 +1,7 @@
-Improve simulation of engines
+Introduce simulation of engines
+Simulate landings (water and land) and land take-off
+Introduce tail and tail hydrofoil
+Definir melhor o hull
+Ver hyper-sustentadores mais detalhadamente
+Ver estruturas
+Ver estabilidade estática e dinâmica

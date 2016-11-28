@@ -1,6 +1,8 @@
 function [V,t,D] = simulate(Pars, plot)
-%UNTITLED3 Summary of this function goes here
-%   Detailed explanation goes here
+%simulate - Simulates the take-off process
+%   Input:
+%   Pars - relevant parameters (all of them)
+%   plot - 
 
 if(nargin>=2 && plot)
     opts=odeset('Events',@(t,V)events(t,V,Pars),'OutputFcn',@odeplot);
@@ -17,13 +19,20 @@ end
 function [value,isterminal,direction] = events(~,V,Pars)
 % Locate the time when submergence passes through zero in a decreasing 
 % direction and stop integration.
-value = fzero(@(h)Vertical_Force(V,h,Pars), 1); % detect h = 0
+value = depth(V,Pars); % detect h = 0
 isterminal = 1; % stop the integration
 direction = -1; % negative direction
 end
 
 function [acc] = odefun(~,V, Pars)
-
-h = fzero(@(h)Vertical_Force(V,h,Pars), 1.001); 
+h = depth(V,Pars);
 acc = Horizontal_Acceleration(V, h, Pars);
+end
+
+function [h] = depth(V, Pars)
+    if(V >= Pars.v_TOF)
+        h = -1e-3;
+    else
+        h = fzero(@(h)Vertical_Force(V,h,Pars), 1.001); 
+    end
 end

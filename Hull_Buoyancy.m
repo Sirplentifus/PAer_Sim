@@ -1,5 +1,5 @@
 function [ B_H ] = Hull_Buoyancy( h, Pars )
-%Hull_Forces - Computes the drag and buoyancy of the hull at water level h
+%Hull_Forces - Computes the buoyancy of the hull at water level h
 %   Input:
 %   h - water depth measured from bottom of hydrofoil
 %   Pars -y all the necessary parameters. Must contain:

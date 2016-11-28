@@ -12,7 +12,7 @@ function [ R_H ] = Hull_Resistance( V, h, Pars )
 %       W - width of the hull
 %   Output:
 %   R_H - Resistance force experienced by the hull
-%   B_H - Buoyancy
+
 H_V = 0.5*Pars.W_H*sin(Pars.Gamma);
 
 if(h >= Pars.H_h+H_V)
@@ -28,7 +28,6 @@ b = 0.01;
 
 f = m*(Pars.L_H/0.3048)+b;
 a = f*S_H_wet/0.3048^2;
-%0.51444444
 Hydroplanning_Resistance = (a*(V*1.94384)^2)*4.44822;
 
 if(Hydroplanning_Resistance<0)
