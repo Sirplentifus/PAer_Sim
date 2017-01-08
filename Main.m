@@ -1,15 +1,15 @@
 Pars.H_h = 1;%m Hidrofoil to Hull distance
 Pars.Gamma = deg2rad(20); 
-Pars.L_H = 10;%m
+Pars.L_H = 15;%m
 Pars.rho_w = 1000; %Kg/m^3
-Pars.rho_a = 1.225; %Kg/m^3
+Pars.rho_a = 1.184; %Kg/m^3 1.0189
 Pars.W_H = 2.6; %m
 Pars.W_h = 2.5; %m
 Pars.H_P = 1;
-Pars.c_h = 0.47;
+Pars.c_h = 0.45;
 
 Pars.k_wing = 0.0272;
-Pars.CD_0_wing = 0.018;
+Pars.CD_0_wing = 0.018+0.03864;
 Pars.S_wing = 82; %m^2
 Pars.CL_wing = 2.5; %Take-off CL
 Pars.TOM = 16000; %Take-off mass
@@ -86,5 +86,17 @@ title('Take-off Simulation');
 xlabel('Time in seconds');
 ylabel('Speed in m/s');
 fprintf('Simulated Take-off distance = %f\n', TOD);
+
+%Landing wing parameters
+Pars.CD_0_wing = 0.018+0.0552;
+Pars.CL_wing = 0; 
+
+figure;
+[V,t,TOD] = simulate_landing(Pars, true);
+title('Landing Simulation');
+xlabel('Time in seconds');
+ylabel('Speed in m/s');
+fprintf('Simulated Landing distance = %f\n', TOD);
+
 
 

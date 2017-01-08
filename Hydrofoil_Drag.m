@@ -31,7 +31,7 @@ S_hs = S_hs_proj/cos(Pars.Gamma);
 
 AR = Pars.W_h/(Pars.c_h*cos(Pars.Gamma));
 e = 0.8;
-CD_h = 0.009 + 2*CL_h^2/(pi*AR*e);
+CD_h = 0.02 + 2*CL_h^2/(pi*AR*e);
 
 D_h = 0.5*Pars.rho_w*V^2*CD_h*S_hs;    
 
